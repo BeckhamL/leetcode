@@ -1,3 +1,7 @@
+// Slower solution.
+// Add all the chars of t into arraylist O(n)
+// if the char is in s, remove O(2n)
+// return the last char in arraylist O(n)
 class Solution {
     public char findTheDifference(String s, String t) {
 
@@ -17,5 +21,27 @@ class Solution {
         char ans = list.get(0);
 
         return ans;
+    }
+}
+
+// Faster solution.
+// Sort the 2 arrays first O(nlogn)
+// once I find a difference i return the chars O(n)
+// or it will be in the end since its sorted
+class Solution {
+    public char findTheDifference(String s, String t) {
+
+        char[] schar = s.toCharArray();
+        char[] tchar = t.toCharArray();
+
+        Arrays.sort(schar);
+        Arrays.sort(tchar);
+
+        for (int i = 0; i < schar.length; i++) {
+            if (schar[i] != tchar[i]) {
+                return tchar[i];
+            }
+        }
+        return tchar[tchar.length - 1];
     }
 }
