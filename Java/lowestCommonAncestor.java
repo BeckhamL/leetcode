@@ -69,3 +69,26 @@ class Solution {
         return ans;
     }
 }
+
+// Much faster Solution
+// Recursively call; if i reached a root where one path is unable to continue, it must be the last common
+// if both paths are able to continue then I keep going
+// basically, return the current node that a path cant traverse further
+class Solution {
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+
+        if (root == null) {
+            return null;
+        }
+
+        if (root.val < p.val && root.val < q.val) {
+            return lowestCommonAncestor(root.right, p , q);
+        }
+        else if (root.val > p.val && root.val > q.val) {
+            return lowestCommonAncestor(root.left, p , q);
+        }
+        else {
+            return root;
+        }
+    }
+}
