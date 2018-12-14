@@ -1,3 +1,7 @@
+// Original Solution
+// Nested for loop to check if the values match, if they check if ArrayList contains value if not add
+// Runtime: O(n^2)
+
 class Solution {
     public int[] intersection(int[] nums1, int[] nums2) {
 
@@ -19,5 +23,35 @@ class Solution {
             answers[i] = list.get(i);
         }
         return answers;
+    }
+}
+
+// New Solution
+// Same idea but using hashset instead of ArrayList
+// HashSet contains is O(1) where ArrayList contains is O(n)
+// HashSet doesnt allow duplicates so [1,2,2,1] -> [1,2]
+// RunTime: O(n)
+
+class Solution {
+    public int[] intersection(int[] nums1, int[] nums2) {
+        Set<Integer> set = new HashSet<>();
+        ArrayList<Integer> intersect = new ArrayList<>();
+
+        for (int i = 0; i < nums1.length; i++) {
+            set.add(nums1[i]);
+        }
+
+        for (int i = 0; i < nums2.length; i++) {
+            if (set.contains(nums2[i]) && !(intersect.contains(nums2[i]))) {
+                intersect.add(nums2[i]);
+            }
+        }
+
+        int [] ans = new int[intersect.size()];
+
+        for (int i = 0; i < ans.length; i++) {
+            ans[i] = intersect.get(i);
+        }
+        return ans;
     }
 }
