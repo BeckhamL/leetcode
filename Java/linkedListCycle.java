@@ -35,3 +35,19 @@ public class Solution {
         return false;
     }
 }
+
+// Recursive Solution
+public class Solution {
+    public boolean hasCycle(ListNode head) {
+        if (head == null || head.next == null) {
+            return false;
+        }
+        else if (head.next == head) {
+            return true;
+        }
+        else {
+            head.next = head.next.next;
+            return hasCycle(head.next);
+        }
+    }
+}
