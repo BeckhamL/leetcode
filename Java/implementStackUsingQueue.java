@@ -31,7 +31,6 @@ class MyStack {
 
     /** Removes the element on top of the stack and returns that element. */
     public int pop() {
-        System.out.println(list.size());
         return list.poll();
     }
 

@@ -1,3 +1,5 @@
+// If i find a zero, I find the first next non-zero and swap with the moveZeroes
+// Runtime: O(n^2)
 class Solution {
     public int[] moveZeroes(int[] nums) {
 
@@ -5,6 +7,7 @@ class Solution {
 
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == 0) {
+              // If im at the end of the array, return
                 if (i == nums.length-1) {
                     return nums;
                 }
