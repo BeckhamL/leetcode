@@ -31,3 +31,21 @@ class Solution {
         return newS;
     }
 }
+
+// Doing it recursively
+public class Solution{
+
+     public static void main(String []args){
+        recurString("hello");
+     }
+
+     public static void recurString(String s) {
+         if (s == null || s.length() <= 1) {
+             System.out.println(s);
+         }
+         else {
+             System.out.print(s.charAt(s.length()-1));
+             recurString(s.substring(0, s.length()-1));
+         }
+     }
+}
