@@ -1,1 +1,3 @@
 # LeetCode
+
+Practice for interviews.
