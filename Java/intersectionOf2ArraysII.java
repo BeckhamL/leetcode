@@ -27,3 +27,44 @@ class Solution {
         return ans;
     }
 }
+
+// Solution: sort both arrays. keep 2 pointers at the start, if one value is greater than the other, increment the lesser value pointer
+// Runtime: O(n log n)
+
+import java.util.*;
+
+class Solution {
+    public int[] intersect(int[] nums1, int[] nums2) {
+
+        int index1 = 0;
+        int index2 = 0;
+
+        // O(n log n)
+        Arrays.sort(nums1);
+        Arrays.sort(nums2);
+
+        ArrayList<Integer> ans = new ArrayList<>();
+
+        while (index1 < nums1.length && index2 < nums2.length) {
+
+            if (nums1[index1] == nums2[index2]) {
+                ans.add(nums1[index1]);
+                index1++;
+                index2++;
+            }
+            else if (nums1[index1] > nums2[index2]) {
+                index2++;
+            }
+            else {
+                index1++;
+            }
+        }
+
+        int[] arr = new int[ans.size()];
+
+        for (int i = 0; i < ans.size(); i++) {
+            arr[i] = ans.get(i);
+        }
+        return arr;
+    }
+}
