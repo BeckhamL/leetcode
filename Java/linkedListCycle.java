@@ -1,14 +1,6 @@
-/**
- * Definition for singly-linked list.
- * class ListNode {
- *     int val;
- *     ListNode next;
- *     ListNode(int x) {
- *         val = x;
- *         next = null;
- *     }
- * }
- */
+// Solution: keep a fast and slow pointer. If there is a cycle eventually the 2 pointers will align
+// Runtime: O(n)
+
 public class Solution {
     public boolean hasCycle(ListNode head) {
 
@@ -23,7 +15,7 @@ public class Solution {
         ListNode fast = head.next;
         ListNode slow = head;
 
-        while (slow != null && fast != null && fast.next != null) {
+        while (fast != null && fast.next != null) {
             if (fast.val == slow.val) {
                 return true;
             }
@@ -36,7 +28,9 @@ public class Solution {
     }
 }
 
-// Recursive Solution
+// Solution:
+// Runtime: O(n)
+
 public class Solution {
     public boolean hasCycle(ListNode head) {
         if (head == null || head.next == null) {
