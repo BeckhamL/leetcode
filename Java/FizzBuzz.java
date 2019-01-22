@@ -1,15 +1,22 @@
-public class Solution {
+class Solution {
     public List<String> fizzBuzz(int n) {
 
-         String[] arr = new String[n];
-        for (int i = 0, j = 1; i < n; i++, j++) {
-            if      (j % 15 == 0) arr[i] = "FizzBuzz";
-            else if (j %  3 == 0) arr[i] = "Fizz";
-            else if (j %  5 == 0) arr[i] = "Buzz";
+        ArrayList<String> list = new ArrayList<>();
+
+        for (int i = 1; i <= n; i++) {
+            if (i % 5 == 0 && i % 3 == 0) {
+                list.add("FizzBuzz");
+            }
+            else if (i % 5 == 0) {
+                list.add("Buzz");
+            }
+            else if (i % 3 == 0) {
+                list.add("Fizz");
+            }
             else {
-            arr[i] = String.valueOf(j);
+                list.add(Integer.toString(i));
             }
         }
-        return Arrays.asList(arr);
+        return list;
     }
 }
