@@ -9,14 +9,9 @@ public class Solution {
 class Solution {
     public String reverseString(String s) {
 
-        char[] charString = new char[s.length()];
+        char[] charString = s.toCharArray();
         int left = 0;
         int right = s.length() - 1;
-
-        // create a char[] with every character in string
-        for (int i = 0; i < s.length(); i++) {
-            charString[i] = s.charAt(i);
-        }
 
         // use 2 pointers and swap the chars until I reach the end
         while (left < right) {
@@ -27,8 +22,7 @@ class Solution {
             right--;
         }
 
-        String newS = new String(charString);
-        return newS;
+        return String(charString);
     }
 }
 
