@@ -8,17 +8,14 @@ class Solution {
             return 0;
         }
 
-        int prev = nums[0];
         int counter = 1;
         int max = 1;
 
         for (int i = 1; i < nums.length; i++) {
-            if (nums[i] > prev) {
+            if (nums[i] > nums[i-1]) {
                 counter++;
-                prev = nums[i];
             }
             else {
-                prev = nums[i];
                 counter = 1;
             }
 
