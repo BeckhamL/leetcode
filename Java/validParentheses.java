@@ -2,7 +2,6 @@ class Solution {
     public boolean isValid(String s) {
 
         Stack<Character> stack = new Stack<>();
-        boolean isTrue = false;
 
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == '(' || s.charAt(i) == '[' || s.charAt(i) == '{') {
@@ -12,7 +11,7 @@ class Solution {
                 if (stack.isEmpty() || stack.peek() != '(') {
                     return false;
                 }
-                else if (stack.peek() == '(') {
+                else {
                     stack.pop();
                 }
             }
@@ -20,7 +19,7 @@ class Solution {
                 if (stack.isEmpty() || stack.peek() != '[') {
                     return false;
                 }
-                else if (stack.peek() == '[') {
+                else  {
                     stack.pop();
                 }
             }
@@ -28,17 +27,15 @@ class Solution {
                 if (stack.isEmpty() || stack.peek() != '{') {
                     return false;
                 }
-                else if (stack.peek() == '{') {
+                else {
                     stack.pop();
                 }
             }
         }
+
         if (stack.isEmpty()) {
-            isTrue = true;
+            return true;
         }
-        else {
-            isTrue = false;
-        }
-        return isTrue;
+        return false;
     }
 }
