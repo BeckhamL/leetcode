@@ -1,4 +1,4 @@
-// Problem: Convert integer to binary.
+// Problem: Convert integer to binary. Convert binary to integer
 // Runtime: O(n)
 
 import java.util.*;
@@ -29,4 +29,24 @@ public class MyClass {
 
         return ans;
     }
+
+    public static int getDecimal(int binary) {
+      int decimal = 0;
+      int n = 0;
+
+      while(true){
+
+        if(binary == 0){
+          break;
+
+        }
+        else {
+            int temp = binary % 10;
+            decimal += temp * Math.pow(2, n);
+            binary = binary/10;
+            n++;
+         }
+      }
+    return decimal;
+  }
 }
