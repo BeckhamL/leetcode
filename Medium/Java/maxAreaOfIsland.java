@@ -21,6 +21,7 @@ class Solution {
 
     public static int dfs(int[][]grid, int i, int j) {
 
+        // Because we are calling recursively, I need to make sure we dont go out of bounds.
         if (i < 0 || j < 0 || i > grid.length-1 || j > grid[i].length-1 || grid[i][j] == 0) {
             return 0;
         }
