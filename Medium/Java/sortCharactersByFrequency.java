@@ -18,7 +18,8 @@ class Solution {
                 map.put(s.charAt(i), 1);
             }
         }
-
+        
+        // This takes the value of the hashmap, and orders them highest to lowest
         PriorityQueue<Character> heap = new PriorityQueue<>((a,b) -> map.get(b) - map.get(a));
 
         heap.addAll(map.keySet());
