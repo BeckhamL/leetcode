@@ -12,7 +12,7 @@ class Solution {
 }
 
 // Solution: using a PriorityQueue heap which stores smallest -> largest
-// check that the heap size is smaller than k, once you add a new value to the heap, remove the smallest one which is at head position
+// check that the heap size is smaller than k, once you add a new value to the min heap, remove the smallest one which is at head position
 // Runtime: O(N log k)
 
 class Solution {
