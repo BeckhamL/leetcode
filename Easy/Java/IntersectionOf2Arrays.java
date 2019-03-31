@@ -34,24 +34,27 @@ class Solution {
 
 class Solution {
     public int[] intersection(int[] nums1, int[] nums2) {
-        Set<Integer> set = new HashSet<>();
-        ArrayList<Integer> intersect = new ArrayList<>();
 
-        for (int i = 0; i < nums1.length; i++) {
-            set.add(nums1[i]);
+        HashSet<Integer> set = new HashSet<>();
+        HashSet<Integer> ans = new HashSet<>();
+
+        for (int x : nums1) {
+            set.add(x);
         }
 
         for (int i = 0; i < nums2.length; i++) {
-            if (set.contains(nums2[i]) && !(intersect.contains(nums2[i]))) {
-                intersect.add(nums2[i]);
+            if (set.contains(nums2[i])) {
+                ans.add(nums2[i]);
             }
         }
 
-        int [] ans = new int[intersect.size()];
+        int[] arr = new int[ans.size()];
 
-        for (int i = 0; i < ans.length; i++) {
-            ans[i] = intersect.get(i);
+        int index = 0;
+        for (int s : ans) {
+            arr[index] = s;
+            index++;
         }
-        return ans;
+        return arr;
     }
 }
