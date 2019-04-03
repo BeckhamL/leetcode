@@ -4,7 +4,7 @@
 
 class Solution {
 
-    static int counter = 0;
+    int counter = 0;
     public int pathSum(TreeNode root, int sum) {
 
         if (root == null) {
@@ -12,13 +12,13 @@ class Solution {
         }
 
         helper(root,sum);
-        helper(root.left, sum);
-        helper(root.right, sum);
+        pathSum(root.left, sum);
+        pathSum(root.right, sum);
 
         return counter;
     }
 
-    public static void helper(TreeNode root, int sum) {
+    public void helper(TreeNode root, int sum) {
 
 
         if (root == null) {
