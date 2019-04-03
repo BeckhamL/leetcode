@@ -29,13 +29,16 @@ class Solution {
 
     public static void dfs(TreeNode root, ArrayList<Integer> arr) {
 
-        if (root != null) {
-            if (root.left == null && root.right == null) {
-                arr.add(root.val);
-            }
-            dfs(root.left, arr);
-            dfs(root.right,arr);
+        if (root == null) {
+            return;
         }
+
+        if (root.left == null && root.right == null) {
+            arr.add(root.val);
+        }
+
+        dfs(root.left, arr);
+        dfs(root.right,arr);
 
     }
 }
