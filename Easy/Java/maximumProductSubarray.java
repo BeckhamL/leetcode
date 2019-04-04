@@ -15,9 +15,7 @@ public class Solution {
             int temp = max;
             max = Math.max(Math.max(max * A[i], min * A[i]), A[i]);
             min = Math.min(Math.min(temp * A[i], min * A[i]), A[i]);
-            if (max > result) {
-                result = max;
-            }
+            result = Math.max(result,max);
         }
         return result;
     }
