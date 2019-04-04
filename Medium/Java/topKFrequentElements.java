@@ -18,6 +18,7 @@ class Solution {
             }
         }
 
+        // sorts from least to greatest
         PriorityQueue<Integer> heap = new PriorityQueue<>((n1,n2) -> map.get(n1) - map.get(n2));
 
         for (int n : map.keySet()) {
