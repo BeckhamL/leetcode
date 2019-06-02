@@ -15,7 +15,7 @@ class Solution {
             map.put(points[i], val);
         }
 
-        // This takes the value of the hasmap and orders them highest to lowest (maxheap)
+        // This takes the value of the hashmap and orders them highest to lowest (maxheap)
         PriorityQueue<int[]> heap = new PriorityQueue<>((a,b) -> map.get(b) - map.get(a));
 
         for (Map.Entry<int[], Integer> entry : map.entrySet()) {
