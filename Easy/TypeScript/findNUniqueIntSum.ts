@@ -1,4 +1,3 @@
-// Given an integer n, return any array containing n unique integers such that they add up to 0.
 function sumZero(n: number): number[] {
 
     let ansArray = [];
@@ -9,7 +8,8 @@ function sumZero(n: number): number[] {
     
     if (n % 2 == 0) {
         // dont add 0
-        for (let i = 1; i < n+1; i+=2) {
+        // +=2 because im adding 2 values per iteration
+        for (let i = 1; i < n; i+=2) {
             
             let increment = i;
             let incrementNeg = i * -1;
@@ -19,7 +19,9 @@ function sumZero(n: number): number[] {
     } else {
         // add 0
         ansArray.push(0);
-        for (let i = 1; i < n-1; i+=2) {
+        
+        // +=2 because im adding 2 values per iteration
+        for (let i = 1; i < n; i+=2) {
             
             let increment = i;
             let incrementNeg = i * -1;
