@@ -1,16 +1,15 @@
 function missingNumber(nums: number[]): number {
 
-    // Javascript sorts alphabetically so have to 
-    // specific value
+    // Javascript sorts alphabetically
     nums.sort((a,b) => a - b);
-    let missing = 0;
     
     for (let i = 0; i < nums.length; i++) {
         
-        if (nums[i] === missing) {
-            missing++;
+        if (nums[i] !== i) {
+            return i;
         } 
     }
     
-    return missing;
+    // Return length in case missing element is last
+    return nums.length;
 };
