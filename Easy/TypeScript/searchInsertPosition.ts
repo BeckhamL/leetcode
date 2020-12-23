@@ -1,6 +1,4 @@
 function searchInsert(nums: number[], target: number): number {
-
-    let insertIndex = 0;
     
     if (nums.length === 0) {
         return 0;
